@@ -1,0 +1,16 @@
+[package]
+name = "yes-or-no"
+version = "0.1.0"
+edition = "2021"
+authors = ["Antoine Renaud <antoine.renaud91@gmail.com>"]
+description = "Very simple yes or no CLI tool"
+license = "GPL-3.0-only"
+repository = "https://github.com/AntoineRenaud91/yes-or-no"
+homepage = "https://github.com/AntoineRenaud91/yes-or-no"
+keywords = ["yes","no","cli","tool","stdin"]
+documentation = "https://docs.rs/yes-or-no"
+categories = ["command-line-interface", "command-line-utilities"]
+
+[dependencies]
+crossterm = "0.22"
+signal-hook = "0.3"
