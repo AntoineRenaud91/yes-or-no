@@ -13,4 +13,3 @@ categories = ["command-line-interface", "command-line-utilities"]
 
 [dependencies]
 crossterm = "0.22"
-signal-hook = "0.3"
