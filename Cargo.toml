@@ -1,10 +1,10 @@
 [package]
 name = "yes-or-no"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Antoine Renaud <antoine.renaud91@gmail.com>"]
 description = "Very simple yes or no CLI tool"
-license = "GPL-3.0-only"
+license = "MIT"
 repository = "https://github.com/AntoineRenaud91/yes-or-no"
 homepage = "https://github.com/AntoineRenaud91/yes-or-no"
 keywords = ["yes","no","cli","tool","stdin"]
