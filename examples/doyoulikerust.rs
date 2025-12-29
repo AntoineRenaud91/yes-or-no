@@ -1,9 +1,10 @@
 use yes_or_no::yes_or_no;
 
-fn main() {
-    if yes_or_no("🦀 Do you like Rust? 🦀", true) {
-        println!("You like Rust! 🤩" );
-    } else {
-        println!("You don't like Rust... 😭");
+fn main() -> std::io::Result<()> {
+    match yes_or_no("🦀 Do you like Rust? 🦀", true)? {
+        Some(true) => println!("You like Rust! 🤩"),
+        Some(false) => println!("You don't like Rust... 😭"),
+        None => println!("Cancelled."),
     }
+    Ok(())
 }

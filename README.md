@@ -14,27 +14,28 @@ Here is an example of how to use `yes-or-no` in your Rust project:
 ```rust
 use yes_or_no::yes_or_no;
 
-fn main() {
-    if yes_or_no("🦀 Do you like Rust? 🦀", true) {
-        println!("You like Rust! 🤩" );
-    } else {
-        println!("You don't like Rust... 😭");
+fn main() -> std::io::Result<()> {
+    match yes_or_no("🦀 Do you like Rust? 🦀", true)? {
+        Some(true) => println!("You like Rust! 🤩"),
+        Some(false) => println!("You don't like Rust... 😭"),
+        None => println!("Cancelled."),
     }
+    Ok(())
 }
 ```
 When you run the program, you'll be presented with a prompt in your terminal:
 ```bash
-Do you like Rust? Yes [✓] No [ ]
+🦀 Do you like Rust? 🦀 Yes [✓] No [ ]
 ```
 - Navigate between "Yes" and "No" using the left and right arrow keys.
 - Press Enter to select your choice.
-- Press Escape to automatically select "No".
+- Press Escape to select "No".
+- Press Ctrl+C to cancel (returns `None`).
 
-Depending on your selection, the program will output:
-```bash
-You like Rust! 😁
-```
-or
-```bash
-You don't like Rust... 😭
-```
+## Return Values
+
+The function returns `io::Result<Option<bool>>`:
+- `Ok(Some(true))` - User selected "Yes"
+- `Ok(Some(false))` - User selected "No" (or pressed Escape)
+- `Ok(None)` - User cancelled with Ctrl+C
+- `Err(_)` - A terminal I/O error occurred

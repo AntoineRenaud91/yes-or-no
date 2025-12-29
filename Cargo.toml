@@ -1,6 +1,6 @@
 [package]
 name = "yes-or-no"
-version = "0.1.1"
+version = "0.2.0"
 edition = "2021"
 authors = ["Antoine Renaud <antoine.renaud91@gmail.com>"]
 description = "Very simple yes or no CLI tool"
@@ -12,4 +12,4 @@ documentation = "https://docs.rs/yes-or-no"
 categories = ["command-line-interface", "command-line-utilities"]
 
 [dependencies]
-crossterm = "0.22"
+crossterm = "0.29.0"
